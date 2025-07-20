@@ -1,6 +1,6 @@
 import "./globals.css";
 
-import { Provider } from "@itsatoshi/components/ui/provider";
+import { Provider } from "@itsatoshi/components/theme/provider";
 import type { Metadata } from "next";
 import { Sora, Zen_Maru_Gothic } from "next/font/google";
 
