@@ -1,0 +1,18 @@
+# Dependencies
+node_modules/
+pnpm-lock.yaml
+
+# Build outputs
+.next/
+out/
+dist/
+build/
+
+# Cache
+.eslintcache
+
+# Environment files
+.env*
+
+# Generated files
+*.generated.* 
