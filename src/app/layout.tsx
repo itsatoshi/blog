@@ -5,15 +5,19 @@ import type { Metadata } from "next";
 import { Sora, Zen_Maru_Gothic } from "next/font/google";
 
 const zenMaruGothic = Zen_Maru_Gothic({
-  variable: "--font-zen-maru-gothic",
+  weight: ["300", "400", "500", "700"],
   subsets: ["latin"],
-  weight: ["300", "400", "500", "700", "900"],
+  variable: "--font-zen-maru-gothic",
+  display: "swap",
+  preload: true,
 });
 
 const sora = Sora({
-  variable: "--font-sora",
-  subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
+  subsets: ["latin"],
+  variable: "--font-sora",
+  display: "swap",
+  preload: true,
 });
 
 export const metadata: Metadata = {
@@ -27,8 +31,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${zenMaruGothic.variable} ${sora.variable}`}>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${zenMaruGothic.variable} ${sora.variable}`}
+    >
+      <body>
         <Provider>{children}</Provider>
       </body>
     </html>
