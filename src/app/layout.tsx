@@ -1,7 +1,8 @@
-import type { Metadata } from "next";
-import { Zen_Maru_Gothic, Sora } from "next/font/google";
-import { Provider } from "@itsatoshi/components/ui/provider"
 import "./globals.css";
+
+import { Provider } from "@itsatoshi/components/ui/provider";
+import type { Metadata } from "next";
+import { Sora, Zen_Maru_Gothic } from "next/font/google";
 
 const zenMaruGothic = Zen_Maru_Gothic({
   variable: "--font-zen-maru-gothic",
@@ -28,9 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${zenMaruGothic.variable} ${sora.variable}`}>
-        <Provider>
-          {children}
-        </Provider>
+        <Provider>{children}</Provider>
       </body>
     </html>
   );
