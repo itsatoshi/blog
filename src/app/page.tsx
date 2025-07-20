@@ -9,12 +9,13 @@ export default function Home() {
       <Heading size="4xl">@itsatoshi</Heading>
       <Box
         boxShadow="md"
-        bgColor="red"
+        bgColor="forest.300"
         border="8px solid white"
         position="relative"
         w="200px"
         h="200px"
         borderRadius="full"
+        bgImage="url(/images/backgrounds/topography-forest.svg)"
       >
         <Image src="/images/memoji.png" fill sizes="200px" alt="" />
       </Box>
