@@ -1,95 +1,120 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
+
+import {
+  Box,
+  Container,
+  Heading,
+  Text,
+  Button,
+  Stack,
+  Card,
+} from "@chakra-ui/react";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <Container maxW="4xl" py={8} mx="auto">
+      <Stack gap={8}>
+        {/* Font Test Section */}
+        <Box p={4} border="1px solid" borderColor="gray.200" borderRadius="md">
+          <Text fontSize="sm" color="gray.500" mb={2}>
+            Font Test:
+          </Text>
+          <div style={{ fontFamily: "var(--font-sora)" }}>
+            <strong>This should be Sora font</strong>
+          </div>
+          <div style={{ fontFamily: "var(--font-zen-maru-gothic)" }}>
+            This should be Zen Maru Gothic font
+          </div>
+        </Box>
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+        {/* Header Section */}
+        <Box textAlign="center">
+          <Heading
+            size="2xl"
+            mb={4}
+            bgGradient="to-r"
+            gradientFrom="blue.400"
+            gradientTo="purple.500"
+            bgClip="text"
+            style={{ fontFamily: "var(--font-sora)" }}
           >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
+            Welcome to Chakra UI v3
+          </Heading>
+          <Text
+            fontSize="lg"
+            color="gray.600"
+            style={{ fontFamily: "var(--font-zen-maru-gothic)" }}
           >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+            This demo showcases your custom Google Fonts setup with Zen Maru
+            Gothic as body text and Sora for headings.
+          </Text>
+        </Box>
+
+        {/* Font Demo Section */}
+        <Stack gap={6}>
+          <Card.Root p={6}>
+            <Card.Body>
+              <Heading size="lg" mb={3}>
+                Heading Font: Sora
+              </Heading>
+              <Text>
+                Body text uses Zen Maru Gothic font. This paragraph demonstrates
+                how the body font looks in a longer piece of text. The
+                Japanese-inspired Zen Maru Gothic provides excellent readability
+                for body content while maintaining a modern, clean aesthetic.
+              </Text>
+            </Card.Body>
+          </Card.Root>
+
+          <Card.Root p={6}>
+            <Card.Body>
+              <Heading size="md" mb={3}>
+                Typography Hierarchy
+              </Heading>
+              <Stack gap={3} align="start">
+                <Heading size="xl">Extra Large Heading (Sora)</Heading>
+                <Heading size="lg">Large Heading (Sora)</Heading>
+                <Heading size="md">Medium Heading (Sora)</Heading>
+                <Heading size="sm">Small Heading (Sora)</Heading>
+                <Text fontSize="lg">Large body text (Zen Maru Gothic)</Text>
+                <Text fontSize="md">Regular body text (Zen Maru Gothic)</Text>
+                <Text fontSize="sm">Small body text (Zen Maru Gothic)</Text>
+              </Stack>
+            </Card.Body>
+          </Card.Root>
+
+          <Card.Root p={6}>
+            <Card.Body>
+              <Heading size="lg" mb={4}>
+                Interactive Components
+              </Heading>
+              <Stack direction="row" gap={4} flexWrap="wrap">
+                <Button colorScheme="blue" size="lg">
+                  Primary Button
+                </Button>
+                <Button variant="outline" colorScheme="blue" size="lg">
+                  Outline Button
+                </Button>
+                <Button variant="ghost" colorScheme="blue" size="lg">
+                  Ghost Button
+                </Button>
+              </Stack>
+              <Text mt={4}>
+                These buttons and this text demonstrate the font system working
+                together seamlessly. Button text inherits from the body font
+                (Zen Maru Gothic) while maintaining proper hierarchy.
+              </Text>
+            </Card.Body>
+          </Card.Root>
+        </Stack>
+
+        {/* Footer */}
+        <Box textAlign="center" pt={8}>
+          <Text color="gray.500">
+            Built with Next.js 15, Chakra UI v3, and Google Fonts
+          </Text>
+        </Box>
+      </Stack>
+    </Container>
   );
 }
